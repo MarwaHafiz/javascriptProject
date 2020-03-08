@@ -21,49 +21,48 @@
         <div class="container-contact100">
             <div class="wrap-contact100">
 <!-- ======================================================================================================== -->
-                <form class="contact100-form validate-form" name="myform" >
+                <form class="contact100-form" name="myForm" onsubmit="return validateForm()">
                     <span class="contact100-form-title">
                         Send Us A Message
                     </span>
      <!-- ----------------------------------------------------------------------------------------------- -->
                     <label class="label-input100" for="first-name">Name*</label>
-                    <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-                        <input id="first-name" class="input100" type="text" name="first-name" placeholder="First name" required>
+                    <div class="wrap-input100 rs1-wrap-input100">
+                        <input id="first-name" class="input100" type="text" name="first-name"  maxlength="10" placeholder="First name"  autofocus required>
                         <span class="focus-input100"></span>
                     </div>
-                    <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-                        <input class="input100" type="text" name="last-name" placeholder="Last name" required>
+                    <div class="wrap-input100 rs2-wrap-input100">
+                        <input id="last-name" class="input100" type="text" name="last-name" maxlength="10" placeholder="Last name" required>
                         <span class="focus-input100"></span>
                     </div>
      <!-- ------------------------------------------------------------------------------------------------------------ -->
                     <label class="label-input100" for="email">Enter your email *</label>
-                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com" required>
+                    <div class="wrap-input100 ">
+                        <input id="email" class="input100" type="text" name="email" pattern="[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$"
+                             placeholder="Eg. example@email.com" required>
                         <span class="focus-input100"></span>
                     </div>
      <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                    <label class="label-input100" for="phone">Enter phone number</label>
+                    <label class="label-input100" for="phone">Enter phone number*</label>
                     <div class="wrap-input100">
-                        <input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
+                        <input id="phone" class="input100" type="text" name="phone"  maxlength="11" placeholder="Eg. 01x 00000000">
                         <span class="focus-input100"></span>
                     </div>
       <!-- ----------------------------------------------------------------------------------------------- -->
                     <label class="label-input100" for="subject">Subject*</label>
                     <div class="wrap-input100">
-                        <input id="subject" class="input100" type="text" name="phone" placeholder="Write a subject " required>
+                        <input id="subject" class="input100" type="text" name="subject" placeholder="Write a subject" required>
                         <span class="focus-input100"></span>
                     </div>
       <!-- ---------------------------------------------------------------------------------------------------------- -->
-                    <label class="label-input100" for="message">Message *</label>
-                    <div class="wrap-input100 validate-input" data-validate = "Message is required">
-                        <textarea id="message" class="input100" name="message"  rows="5"  placeholder="Write us a message" required></textarea>
+                    <label class="label-input100" for="message">Message*</label>
+                    <div class="wrap-input100 ">
+                        <textarea id="message" class="input100" name="message"  rows="5"  placeholder="Write us a message" minlength="20" required></textarea>
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="container-contact100-form-btn">
-                        <button class="contact100-form-btn">
-                            Send Message
-                        </button>
+                        <input  class="contact100-form-btn" type="submit" value="Send Message">
                     </div>
                 </form>
         <!-- ================================================================================== -->
