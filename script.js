@@ -3,7 +3,6 @@ let name = document.getElementById('name');
 let email = document.getElementById('email');
 let subject = document.getElementById('subject');
 let message = document.getElementById('message');
-
 const myForm = document.getElementById('myForm');
 
 myForm.addEventListener('submit', function (e) {
@@ -28,6 +27,7 @@ myForm.addEventListener('submit', function (e) {
     }).catch(function (error) {
         console.log(error);
     })
+
 })
 // const form={
 
