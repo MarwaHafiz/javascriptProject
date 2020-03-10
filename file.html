@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE >
 <html>
 <!-- =================================================================================================== -->
     <head>
@@ -21,20 +21,20 @@
         <div class="container-contact100">
             <div class="wrap-contact100">
 <!-- ======================================================================================================== -->
-                <form class="contact100-form" name="myForm" onsubmit="return validateForm()">
+                <form class="contact100-form" name="myForm" id="myForm" >
                     <span class="contact100-form-title">
                         Send Us A Message
                     </span>
      <!-- ----------------------------------------------------------------------------------------------- -->
                     <label class="label-input100" for="first-name">Name*</label>
                     <div class="wrap-input100 rs1-wrap-input100">
-                        <input id="first-name" class="input100" type="text" name="first-name"  maxlength="10" placeholder="First name"  autofocus required>
+                        <input id="name" class="input100" type="text" name="name" minlength="3"  maxlength="50" placeholder="Full name"  autofocus required>
                         <span class="focus-input100"></span>
                     </div>
-                    <div class="wrap-input100 rs2-wrap-input100">
-                        <input id="last-name" class="input100" type="text" name="last-name" maxlength="10" placeholder="Last name" required>
+                    <!-- <div class="wrap-input100 rs2-wrap-input100">
+                        <input id="last-name" class="input100" type="text" name="last-name" minlength="3" maxlength="30" placeholder="Last name" required>
                         <span class="focus-input100"></span>
-                    </div>
+                    </div> -->
      <!-- ------------------------------------------------------------------------------------------------------------ -->
                     <label class="label-input100" for="email">Enter your email *</label>
                     <div class="wrap-input100 ">
@@ -43,11 +43,11 @@
                         <span class="focus-input100"></span>
                     </div>
      <!-- ---------------------------------------------------------------------------------------------------------------- -->
-                    <label class="label-input100" for="phone">Enter phone number*</label>
+                    <!-- <label class="label-input100" for="phone">Enter phone number*</label>
                     <div class="wrap-input100">
                         <input id="phone" class="input100" type="text" name="phone"  maxlength="11" placeholder="Eg. 01x 00000000">
                         <span class="focus-input100"></span>
-                    </div>
+                    </div> -->
       <!-- ----------------------------------------------------------------------------------------------- -->
                     <label class="label-input100" for="subject">Subject*</label>
                     <div class="wrap-input100">
@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="container-contact100-form-btn">
-                        <input  class="contact100-form-btn" type="submit" value="Send Message">
+                        <input class="contact100-form-btn"  id="btn" type="submit" value="Send Message">
                     </div>
                 </form>
         <!-- ================================================================================== -->
@@ -125,3 +125,4 @@
 <!-- ================================================================================================================ -->
     </body>
 </html>
+<!-- ======================================================================================================= -->
