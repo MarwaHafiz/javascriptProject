@@ -17,26 +17,28 @@ myForm.addEventListener('submit', function (e) {
             email: email.value ,
             subject: subject.value,
             message:message.value,
-        })
-  
-    }).then(function (response) {
+        })}).then(function (response) {
         return response.json();
     }).then(function (result) {
         // console.log(text);
         console.log(result);
+        
+    }).then(function (result){
+        location.reload();
     }).catch(function (error) {
         console.log(error);
-    })
-
+    });
+   
+    
 })
+
+
 // const form={
 
 //   submit: document.getElementById('btn')
 // }
 
 // // console.log(form);
-
-
 
 // form.submit.addEventListener('click',()=>{
 //     const request= new XMLHttpRequest();
