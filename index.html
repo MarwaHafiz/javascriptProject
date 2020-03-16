@@ -1,4 +1,4 @@
-9<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Online Store</title>
@@ -39,17 +39,7 @@
 											<li><a href="contact.html">Contact</a></li>
 										</ul>
 									</li>
-									<li class="hassubs">
-										<a href="categories.html">Categories</a>
-										<ul>
-											<li><a href="categories.html">Category</a></li>
-											<li><a href="categories.html">Category</a></li>
-											<li><a href="categories.html">Category</a></li>
-											<li><a href="categories.html">Category</a></li>
-											<li><a href="categories.html">Category</a></li>
-										</ul>
-									</li>
-								
+									
 									<li><a href="#">About us</a></li>
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
@@ -106,7 +96,16 @@
 					<div class="col">
 						<div class="search_panel_content d-flex flex-row align-items-center justify-content-end">
 							<form action="#">
-								<input type="text" class="search_input" placeholder="Search" required="required">
+								<input type="text" id="Category" class="search_input" placeholder="Search" required="required">
+								<button id="submit1" onclick="getApibyCategory(input.value)">Filter by Category</button>
+							</form>
+							<form action="#">
+								<input type="text" id="Supplier Name" class="search_input" placeholder="Search" required="required">
+								<button id="submit2" onclick="getApibySupplier(string.value)">Filter by Supplier Name</button>
+							</form>
+							<form action="#">
+								<input type="text" id="NameandD" class="search_input" placeholder="Search" required="required">
+								<button id="submit3" onclick="getApibyName(sig.value)">Search</button>
 							</form>
 						</div>
 					</div>
@@ -145,15 +144,6 @@
 							<li class="page_menu_item menu_mm"><a href="cart.html">Cart<i class="fa fa-angle-down"></i></a></li>
 							<li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i class="fa fa-angle-down"></i></a></li>
 							<li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
-						</ul>
-					</li>
-					<li class="page_menu_item has-children menu_mm">
-						<a href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
-						<ul class="page_menu_selection menu_mm">
-							<li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-							<li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
 						</ul>
 					</li>
 					
@@ -258,34 +248,30 @@
 
 		</div>
 	</div>
-
 	
-		 <div id="people">
+	<!-- product details--->
+		 <div id="people"> 
            <!--template clones will be rendered here -->
 	</div>
       
-	<!-- the template tag does not render in the document,
-		 JS is used to populate and clone it -->
-		 <div >
-	<template id="person">
-	  <div style="padding: 20px; display: inline-block;">
-		<p class="name" style = "font-weight: bold; color:brown " ></p>
-		<img src="" alt="" class="image">
-		<p class="price"></p>
-		<a href="#"  >Add to Cart</a>
-	  </div>
-  </template>
-  </div>
+
 <!----paginationS-->
-  <div class="pagination" style ="margin:auto;padding:2%;width: 40%;">
-	<a href="#">&laquo;</a>
-	<a href="#">1</a>
-	<a href="#">2</a>
-	<a href="#">3</a>
-	<a href="#">4</a>
-	<a href="#">5</a>
-	<a href="#">6</a>
-	<a href="#">&raquo;</a>
+  <div class="pagination" style ="margin:auto;padding:2%;width: 50%;">
+	
+	 <a href="#" onclick="getApi(1)">1</a>
+	<a href="#"onclick="getApi(2)" >2</a>
+	<a href="#" onclick="getApi(3)">3</a>
+	<a href="#" onclick="getApi(4)">4</a>
+	<a href="#" onclick="getApi(5)">5</a>
+	<a href="#" onclick="getApi(6)">6</a>
+	<a href="#" onclick="getApi(7)">7</a>
+	<a href="#" onclick="getApi(8)">8</a>
+	<a href="#" onclick="getApi(9)">9</a>
+	<a href="#" onclick="getApi(10)">10</a>
+	<a href="#" onclick="getApi(11)">11</a>
+	<a href="#" onclick="getApi(12)">12</a>
+	<a href="#" onclick="getApi(13)">13</a>
+
   </div>
 	<!-- Footer -->
 	
@@ -329,23 +315,88 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
 <script>
- const personTemplate = document.querySelector("#person");
-const peopleContainer = document.querySelector("#people");
 
-async function getApi() {
-  const req = await fetch("https://afternoon-falls-30227.herokuapp.com/api/v1/products/?page=1");
+const peopleContainer = document.querySelector("#people");
+const person = (name, price, image) => `
+	<div style="padding: 20px; display: inline-block;">
+		<p class="name" style = "font-weight: bold; color:brown " >${name}</p>
+		<img src="${image}" alt="" class="image">
+		<p class="price">${price}</p>
+		<a href="#"  >Add to Cart</a>
+	  </div>
+`;
+
+async function getApi(Page) {
+  const req = await fetch("https://afternoon-falls-30227.herokuapp.com/api/v1/products/?limit=10&page="+Page);
   const resp = await req.json();
 
-  for (const product of resp.data) {
-    let clone = document.importNode(personTemplate.content, true);
-    clone.querySelector(".name").textContent = product.Name;
-    clone.querySelector(".image").src = product.ProductPicUrl;
-    clone.querySelector(".price").textContent = product.Price;
-    peopleContainer.appendChild(clone);
+  let htmlString = "";
+
+  for (const {Name, Price, ProductPicUrl} of resp.data) {
+    htmlString += person(Name, Price, ProductPicUrl);
   }
+  // This should probably be an html element that gets appended
+  // instead of just shoving strings in willy-nilly, but anyway:
+  peopleContainer.innerHTML = htmlString;
+  Page++;
 }
 
-getApi();
+getApi(1);
+var button1= document.querySelector("#submit1");
+var button2= document.querySelector("#submit2");
+var button3= document.querySelector("#submit3");
+var input=document.querySelector("#Category");
+var sig=document.querySelector("#NameandD");
+var string=document.querySelector("#Supplier Name");
+
+
+async function getApibyCategory(Category) {
+
+  const req = await fetch("https://afternoon-falls-30227.herokuapp.com/api/v1/products/?category="+Category);
+  const resp = await req.json();
+
+  let htmlString = "";
+
+  for (const {Name, Price, ProductPicUrl} of resp.data) {
+    htmlString += person(Name, Price, ProductPicUrl);
+  }
+  // This should probably be an html element that gets appended
+  // instead of just shoving strings in willy-nilly, but anyway:
+  peopleContainer.innerHTML = htmlString;
+}
+
+
+async function getApibySupplier(SupplierName) {
+
+const req = await fetch("https://afternoon-falls-30227.herokuapp.com/api/v1/products/?supplier="+SupplierName);
+const resp = await req.json();
+
+let htmlString = "";
+
+for (const {Name, Price, ProductPicUrl} of resp.data) {
+  htmlString += person(Name, Price, ProductPicUrl);
+}
+// This should probably be an html element that gets appended
+// instead of just shoving strings in willy-nilly, but anyway:
+peopleContainer.innerHTML = htmlString;
+}
+
+
+async function getApibyName(Name) {
+
+const req = await fetch("https://afternoon-falls-30227.herokuapp.com/api/v1/products/?q="+Name);
+const resp = await req.json();
+
+let htmlString = "";
+
+for (const {Name, Price, ProductPicUrl} of resp.data) {
+  htmlString += person(Name, Price, ProductPicUrl);
+}
+// This should probably be an html element that gets appended
+// instead of just shoving strings in willy-nilly, but anyway:
+peopleContainer.innerHTML = htmlString;
+}
+
 
 </script>
 </body>
