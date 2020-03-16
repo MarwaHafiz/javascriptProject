@@ -179,6 +179,10 @@ $(document).ready(function()
 
 	*/
 
+
+	
+	//buttons
+
 	function initQuantity()
 	{
 		// Handle product quantity input
