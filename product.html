@@ -13,6 +13,8 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/product.css">
 <link rel="stylesheet" type="text/css" href="styles/product_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/checkout.css">
+<link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
 </head>
 <body>
 
@@ -26,7 +28,7 @@
         <div class="row">
           <div class="col">
             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-              <div class="logo"><a href="#" onclick="getApi('HT-1007')" >Sublime.</a></div>
+              <div class="logo"><a href="index.html"  >E-Shopping.</a></div>
               <nav class="main_nav">
                 <ul>
                   <li class="hassubs active">
@@ -39,18 +41,12 @@
                       <li><a href="contact.html">Contact</a></li>
                     </ul>
                   </li>
-                  <li class="hassubs">
-                    <a href="categories.html">Categories</a>
-                    <ul>
-                      <li><a href="categories.html">Category</a></li>
-                      <li><a href="categories.html">Category</a></li>
-                      <li><a href="categories.html">Category</a></li>
-                      <li><a href="categories.html">Category</a></li>
-                      <li><a href="categories.html">Category</a></li>
-                    </ul>
+                  <li>
+                    <a href="aboutus.html">About Us</a>
+                   
                   </li>
-                  <li><a href="#">Accessories</a></li>
-                  <li><a href="#">Offers</a></li>
+                  <!-- <li><a href="#">Accessories</a></li>
+                  <li><a href="#">Offers</a></li> -->
                   <li><a href="contact.html">Contact</a></li>
                 </ul>
               </nav>
@@ -117,10 +113,10 @@
     <!-- Social -->
     <div class="header_social">
       <ul>
-        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.pinterest.com"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
       </ul>
     </div>
   </header>
@@ -167,26 +163,38 @@
 
     <div class="menu_social">
       <ul>
-        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.pinterest.com"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
       </ul>
     </div>
   </div>
   <!-- Home -->
 
-  <div class="home">
-    <div class="home_container">
-      <div class="home_background" style="background-image:url(images/categories.jpg)"></div>
-      <div class="home_content_container">
-        <div class="container">
-          
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="home">
+		<div class="home_container">
+			<div class="home_background" style="background-image:url(images/categories.jpg)"></div>
+			<div class="home_content_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_content">
+								<div class="breadcrumbs">
+                  <div class="home_slider_title">A new Online Shopping experience.</div>
+									<ul>
+										<li><a href="index.html">Home</a></li>
+										<li><a href="cart.html">Shopping Cart</a></li>
+										<li>Product Details</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
   <!-- Product Details -->
   <div id="productdetails">
@@ -206,13 +214,11 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="newsletter_content text-center">
-            <div class="newsletter_title">Subscribe to our newsletter</div>
+            <div class="newsletter_title">Continue Shopping</div>
             <div class="newsletter_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros</p></div>
-            <div class="newsletter_form_container">
-              <form action="#" id="newsletter_form" class="newsletter_form">
-                <input type="email" class="newsletter_input" required="required">
-                <button class="newsletter_button trans_200"><span>Subscribe</span></button>
-              </form>
+                <a href= "index.html">
+                <button class="newsletter_button trans_200"><span>Shop</span></button>
+              </a>
             </div>
           </div>
         </div>
@@ -230,16 +236,16 @@
       <div class="row">
         <div class="col">
           <div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-            <div class="footer_logo"><a href="#">Sublime.</a></div>
+            <div class="footer_logo"><a href="#">E-Shopping.</a></div>
             <div class="copyright ml-auto mr-auto"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank"> OS Team</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
             <div class="footer_social ml-lg-auto">
               <ul>
-                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.pinterest.com"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
               </ul>
             </div>
           </div>
@@ -248,6 +254,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
   </footer>
 </div>
+<script src="script.js"></script>
 <script src="product.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
@@ -261,7 +268,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/product.js"></script>
-
 </body>
 </html>

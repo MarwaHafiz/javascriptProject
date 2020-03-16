@@ -48,25 +48,27 @@ const product = (Category, Name,Status ,Description,ProductPicUrl,Price,Quantity
 						</div>
 						
 					</div>
-					<div class="button cart_button"><a href="#">Add to cart</a></div>
+					<div class="button cart_button"><a href="#" onclick="add()">Add to cart</a></div>
 				</div>
 
 				<!-- Share -->
 				<div class="details_share">
 					<span>Share:</span>
 					<ul>
-						<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.pinterest.com"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
 				
 			</div>
 		</div>
 		
-	</div>`;
-	async function getApi(ProductId) {
+	</div> </br> </br>`;
+(async function loadApi() {
+const urlParams= new URLSearchParams(window.location.search);
+var ProductId= urlParams.get('id')
 const req = await fetch("https://afternoon-falls-30227.herokuapp.com/api/v1/products/"+ProductId);
 const resp = await req.json();
 const detail=resp.data;
@@ -77,4 +79,14 @@ htmlString += product(detail.Category, detail.Name,detail.Status,detail.Descript
 
 
 productContainer.innerHTML = htmlString;
+})();
+
+var itemArr = []
+itemArr=  JSON.parse(localStorage.getItem("id"))
+
+function add() {
+    itemArr.push(ProductId)
+    var id = window.localStorage.setItem("id",JSON.stringify(itemArr))
+   
+    window.location.href = "cart.html"
 }
